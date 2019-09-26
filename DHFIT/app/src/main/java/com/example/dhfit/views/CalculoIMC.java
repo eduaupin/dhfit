@@ -29,12 +29,6 @@ public class CalculoIMC extends AppCompatActivity implements Comunicador {
 
             String imc = dados.getString(IMC_KEY);
 
-
-
-
-
-
-
     }
     public void replaceFragment(int container, Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
@@ -44,14 +38,7 @@ public class CalculoIMC extends AppCompatActivity implements Comunicador {
     }
 
     public void setBundleToFragment(ModeloFragmento modeloFragmento, String CHAVE){
-        //AQUI
-        Intent intent = getIntent();
-        Bundle dados = intent.getExtras();
-        String imc = dados.getString(IMC_KEY);
-        //ESSA FICA
         Bundle bundle = new Bundle();
-        //AQUI EMBAIXO
-        bundle.putString(IMC_KEY, imc);
         bundle.putParcelable(CHAVE, modeloFragmento);
         Fragment segundoFragmento = new FragmentoCalculo();
         segundoFragmento.setArguments(bundle);
